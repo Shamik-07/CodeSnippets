@@ -1,6 +1,4 @@
-[wsl2] 
-# kernel=C:\\temp\\myCustomKernel 
-memory=5GB # Limits VM memory in WSL 2 to 5 GB 
-processors=5 # Makes the WSL 2 VM use two virtual processors 
-
- 
+[wsl2]
+# kernel=C:\\temp\\myCustomKernel
+memory=5GB # Limits VM memory in WSL 2 to 5 GB
+processors=5 # Makes the WSL 2 VM use two virtual processors
