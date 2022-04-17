@@ -21,8 +21,8 @@ def timing_func(func):
 
 
 @timing_func  # wrapping the function
-# function to test the timing_func decorator
 def timer_testing(some_num_time):
+    """Testing the timer decorator."""
     for _ in range(some_num_time):
         # creating a list of cubed numbers
         # and adding them up
