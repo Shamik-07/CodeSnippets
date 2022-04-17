@@ -22,11 +22,16 @@ def debug(func):
     return debug_wrapper
 
 
+# initialising the debug wrapper
+# for the math.factorial module.
 math.factorial = debug(math.factorial)
 
-
+# initialising the debug module
+# for the exp approximation
 @debug
 def approximate_exp(num_terms=10):
+    """Approximating exponential by adding
+    the inverse of n factorials."""
     return sum(1/math.factorial(num) for num in range(num_terms))
 
 
