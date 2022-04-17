@@ -13,8 +13,10 @@ def debug(func):
         # corresponding values
         kwargs_repr = [f"{k}={v!r}" for k, v in kwargs.items()]
         signature = ", ".join(args_repr + kwargs_repr)
+        # Printing the function name and its arguments
         print(f"Calling {func.__name__}({signature})")
         value = func(*args, **kwargs)
+        # the function and their returned values
         print(f"{func.__name__!r} returned {value!r}")
         return value
     return debug_wrapper
