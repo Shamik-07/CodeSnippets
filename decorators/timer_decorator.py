@@ -5,6 +5,7 @@ import time
 
 def timing_func(func):
     """Prints the runtime of any decorated function."""
+
     @functools.wraps(func)
     def timer_wrapper(*args, **kwargs):
         # perf_counter is used her to measure time intervals
@@ -23,6 +24,7 @@ def timing_func(func):
 @timing_func  # wrapping the function
 def timer_testing(some_num_time):
     """Testing the timer decorator."""
+
     for _ in range(some_num_time):
         # creating a list of cubed numbers
         # and adding them up

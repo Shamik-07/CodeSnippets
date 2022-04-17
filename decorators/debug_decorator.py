@@ -5,6 +5,7 @@ import functools
 
 def debug(func):
     """Print the function arguments and return value."""
+
     @functools.wraps(func)
     def debug_wrapper(*args, **kwargs):
         # repr to get a list of the function arguments
@@ -28,10 +29,14 @@ math.factorial = debug(math.factorial)
 
 # initialising the debug module
 # for the exp approximation
+
+
 @debug
 def approximate_exp(num_terms=10):
     """Approximating exponential by adding
     the inverse of n factorials."""
+
+    # returning the approximated exponential
     return sum(1/math.factorial(num) for num in range(num_terms))
 
 
