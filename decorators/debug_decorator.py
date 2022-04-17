@@ -1,9 +1,10 @@
+"""Module for debug decorator."""
 import math
 import functools
 
 
 def debug(func):
-    """Print the function signature and return value"""
+    """Print the function arguments and return value."""
     @functools.wraps(func)
     def wrapper_debug(*args, **kwargs):
         args_repr = [repr(a) for a in args]                      
