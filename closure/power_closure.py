@@ -1,5 +1,6 @@
 '''Module to calculate power of a number.'''
 
+
 def raise_number_to(exponent):
     """Choose the exponent to raise the number to."""
 
@@ -10,7 +11,7 @@ def raise_number_to(exponent):
     return power
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     print('Generating power of 2 for number 4.')
     power_of_two = raise_number_to(2)
     print(power_of_two(4))
