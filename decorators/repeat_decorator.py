@@ -6,7 +6,9 @@ import functools
 
 def repeat_func(_func=None, *, num_times=1):
     """Repeating a function once/any number of times.
+
     This function works with or without the kwarg num_times.
+
     The parameter _func takes two values, either None, when there's
     num_times provided otherwise the decorator function being
     passed to _func."""
@@ -23,15 +25,21 @@ def repeat_func(_func=None, *, num_times=1):
     else:
         return repeat_decorator(_func)
 
+@repeat_func
+def say_hi_once():
+    """Python says hi to you! 😀"""
+    print('Hello there! 😀')
+    return {'H':0,'e':1,'l':2,'l':3,'o':4}
+
+@repeat_func(num_times=3)
+def say_hi_thrice():
+    """Python says hi to you! 😀"""
+    print('Hello there! 😀')
+    return {'H':0,'e':1,'l':2,'l':3,'o':4}
+
 if __name__=="__main__":
-    @repeat_func
-    def say_hi():
-        """Python says hi to you! 😀"""
-        print('Hello there! 😀')
-        return {'H':0,'e':1,'l':2,'l':3,'o':4}
-    
-    @repeat_func(num_times=3)
-    def say_hi():
-        """Python says hi to you! 😀"""
-        print('Hello there! 😀')
-        return {'H':0,'e':1,'l':2,'l':3,'o':4}
+    print('Saying hi once.')
+    say_hi_once()
+    print()
+    print('Saying hi thrice.')
+    say_hi_thrice()
