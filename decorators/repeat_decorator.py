@@ -1,15 +1,19 @@
+"""Module for creating a decorator, which works with/without
+an argument. This decorator repeats the function any number of times
+or just once."""
+
 import functools
 
-def repeat(_func=None, *, num_times=2):
-    def decorator_repeat(func):
+def repeat_func(_func=None, *, num_times=1):
+    def repeat_decorator(func):
         @functools.wraps(func)
-        def wrapper_repeat(*args, **kwargs):
+        def repeat_wrapper(*args, **kwargs):
             for _ in range(num_times):
                 value = func(*args, **kwargs)
             return value
-        return wrapper_repeat
+        return repeat_wrapper
 
     if _func is None:
-        return decorator_repeat
+        return repeat_decorator
     else:
-        return decorator_repeat(_func)
+        return repeat_decorator(_func)
