@@ -9,6 +9,8 @@ def repeat_func(_func=None, *, num_times=1):
     This function works with or without the kwarg num_times.
     """
     def repeat_decorator(func):
+        """Wrapper function for repeating the function.
+        This will create function object for the repeat_func."""
         @functools.wraps(func)
         def repeat_wrapper(*args, **kwargs):
             for _ in range(num_times):
