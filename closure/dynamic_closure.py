@@ -1,10 +1,10 @@
 '''
 Module to calculate the mean of a stream of numbers.
 
-This uses a dynamic enclosure 
+This uses a dynamic enclosure
 i.e. `mean_of_a_stream_of_numbers` doesn't take any argument.
 
-The closure assigned to mean_ retains the state of arg_ls
+The closure assigned to calc_mean retains the state of arg_ls
 between successive calls.
 Even though you define arg_ls in mean_of_a_stream_of_numbers(),
 it’s still available in the closure, so you can modify it.
@@ -17,6 +17,8 @@ def mean_of_a_stream_of_numbers():
     arg_ls = []
 
     def mean_of_num(number):
+        """Calculate the mean of the numbers
+        considering all the preceeding numbers."""
         arg_ls.append(number)
         return sum(arg_ls)/len(arg_ls)
     return mean_of_num
