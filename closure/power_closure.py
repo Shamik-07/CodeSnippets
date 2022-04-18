@@ -1,4 +1,6 @@
-'''Module to calculate power of a number.'''
+'''This uses a static enclosure i.e. the exponent
+argument of the raise_number_to function doesn't change.
+Module to calculate power of a number.'''
 
 
 def raise_number_to(exponent):
