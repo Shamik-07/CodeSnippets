@@ -6,12 +6,8 @@ import functools
 
 def repeat_func(_func=None, *, num_times=1):
     """Repeating a function once/any number of times.
-
     This function works with or without the kwarg num_times.
-
-    The parameter _func takes two values, either None, when there's
-    num_times provided otherwise the decorator function being
-    passed to _func."""
+    """
     def repeat_decorator(func):
         @functools.wraps(func)
         def repeat_wrapper(*args, **kwargs):
