@@ -1,5 +1,5 @@
 '''This uses a static enclosure i.e. the exponent
-argument of the raise_number_to function doesn't change.
+argument of the `raise_number_to` function doesn't change.
 Module to calculate power of a number.'''
 
 
