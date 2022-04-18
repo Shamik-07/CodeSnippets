@@ -16,6 +16,9 @@ def repeat_func(_func=None, *, num_times=1):
             return value
         return repeat_wrapper
 
+# The parameter _func takes two values, either None, when there's
+# num_times provided otherwise the decorator function being
+# passed to _func.
     if _func is None:
         return repeat_decorator
     else:
