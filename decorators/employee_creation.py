@@ -12,7 +12,7 @@ class Employee(object):
         self.email = first + '.' + last + '@email.com'
         self.pay = pay
 
-        Employee.num_of_emps += 1
+        Employee.num_of_employees += 1
 
     def fullname(self):
         return '{} {}'.format(self.first, self.last)
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     emp_11 = Employee('Bambino', 'Jones', 50000)
     emp_12 = Employee('Test', 'Employee', 60000)
 
-    Employee.set_raise_amt(1.05)
+    Employee.set_raise_amount(1.05)
 
     print(Employee.raise_amount)
     print(emp_11.raise_amount)
