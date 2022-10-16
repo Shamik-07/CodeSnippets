@@ -6,16 +6,16 @@ class Employee(object):
     num_of_employees = 10
     raise_amount = 1.04
 
-    def __init__(self, first, last, pay):
-        self.first = first
-        self.last = last
-        self.email = first + '.' + last + '@email.com'
+    def __init__(self, first_name, last_name, pay):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = first_name + '.' + last_name + '@email.com'
         self.pay = pay
 
         Employee.num_of_employees += 1
 
     def fullname(self):
-        return '{} {}'.format(self.first, self.last)
+        return '{} {}'.format(self.first_name, self.last_name)
 
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amount)
@@ -26,8 +26,8 @@ class Employee(object):
 
     @classmethod
     def from_string(cls, emp_str):
-        first, last, pay = emp_str.split('-')
-        return cls(first, last, pay)
+        first_name, last_name, pay = emp_str.split('-')
+        return cls(first_name, last_name, pay)
 
     @staticmethod
     def is_workday(day):
@@ -50,7 +50,7 @@ if __name__ == "__main__":
     emp_str_22 = 'Steve-Smith-30000'
     emp_str_23 = 'Jane-Doe-90000'
 
-    first, last, pay = emp_str_21.split('-')
+    first_name, last_name, pay = emp_str_21.split('-')
 
     new_emp_21 = Employee.from_string(emp_str_21)
 
