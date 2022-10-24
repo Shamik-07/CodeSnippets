@@ -51,16 +51,16 @@ def test_increment_by_1_w_multiple_inputs(test_input, expected_output):
     [
         (1, 2),
         pytest.param(1, 0, marks=pytest.mark.xfail),
-        pytest.param(1, 3, marks=pytest.mark.xfail(reason="some bug")),
+        pytest.param(1, 3, marks=pytest.mark.xfail(reason="***some bug***")),
         (2, 3),
         (3, 4),
         (4, 5),
         pytest.param(
-            1, 0, marks=pytest.mark.skip(reason="this is just an illustration")
+            1, 0, marks=pytest.mark.skip(reason="***this is just an illustration***")
         ),
         pytest.param(
             10, 11, marks=pytest.mark.skipif(sys.version_info >= (3, 0),
-                                             reason="needs to run on python2")
+                                             reason="***needs to run on python2***")
         ),
     ],
 )
@@ -89,14 +89,14 @@ def test_skip():
     assert 1 ==1
 
 @pytest.mark.skipif(sys.version_info >= (3, 0),
-reason ="needs to run on python2")
+reason ="***needs to run on python2***")
 def test_skipif():
     assert 1 == 1
 
 # this is a custom marker
 @pytest.mark.others
 def test_others():
-    print("we can tun this specific test with a \"others\" marker")
+    print("***we can tun this specific test with a \"others\" marker***")
     assert not 0 == None
 
 # useful commands
