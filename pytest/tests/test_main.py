@@ -98,3 +98,6 @@ def test_others():
     print("***we can tun this specific test with a \"others\" marker***")
     assert not 0 == None
 
+def test_my_name():
+    print("***something bogus***")
+    assert 0 == 0
