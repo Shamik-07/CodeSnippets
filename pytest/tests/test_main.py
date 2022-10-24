@@ -99,16 +99,3 @@ def test_others():
     print("***we can tun this specific test with a \"others\" marker***")
     assert not 0 == None
 
-# useful commands
-
-# to display verbose content of the tests
-# `pytest -v <filename>`
-
-# running tests which contain only a certain substring
-# `pytest -v -k <substring> <filename>`
-
-
-
-
-
-
