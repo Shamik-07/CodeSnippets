@@ -21,10 +21,12 @@ def test_get_age():
     assert get_age(yyyy, mm, dd) == 30
 
 # PYTEST FIXTURE
+# the fixture for this is in conftest.py
 def test_get_age_w_fixture(generated_yyyy_mm_dd):
     yyyy, mm, dd = generated_yyyy_mm_dd
     assert get_age(yyyy, mm, dd) == 30
 
+# the fixture for this is in conftest.py
 def test_get_age_w_fixture_raise_error(generated_yyyy_mm_dd):
     yyyy, mm, dd = generated_yyyy_mm_dd
     with pytest.raises(AssertionError):
