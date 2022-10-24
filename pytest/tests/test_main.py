@@ -21,17 +21,6 @@ def test_get_age():
     assert get_age(yyyy, mm, dd) == 30
 
 # PYTEST FIXTURE
-# let's say we have a bunch of tests all testing get_age
-# with the same date "1992/09/08;
-# instead of splitting the dates every time in every test we can create it once and access it for all the tests
-
-# session scope destroys the fixture at the end of the pytest session
-# @pytest.fixture(scope="session")
-# def generated_yyyy_mm_dd():
-#     yyyy, mm, dd = map(int, "1992/09/08".split("/"))
-#     return yyyy, mm, dd
-
-
 def test_get_age_w_fixture(generated_yyyy_mm_dd):
     yyyy, mm, dd = generated_yyyy_mm_dd
     assert get_age(yyyy, mm, dd) == 30
