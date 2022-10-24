@@ -32,7 +32,6 @@ def test_get_age_w_fixture_raise_error(generated_yyyy_mm_dd):
 
 # Pytest parameterise
 # If we would like to run a single test with multiple inputs
-
 @pytest.mark.parametrize(
     "test_input, expected_output", 
     [
