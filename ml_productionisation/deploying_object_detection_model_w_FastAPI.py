@@ -137,6 +137,6 @@ if __name__ == '__main__':
 		detect_and_draw_box(image_file)
 
 	host = "127.0.0.1"
-	uvicorn.run("deploying_object_classification_model_w_FastAPI:app", host=host, port=8000,reload=True)
+	uvicorn.run("deploying_object_detection_model_w_FastAPI:app", host=host, port=8000, reload=True)
 
 
