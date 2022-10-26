@@ -45,7 +45,6 @@ def display_image_from_response(response, filename):
     image_stream.seek(0)
     file_bytes = np.asarray(bytearray(image_stream.read()), dtype=np.uint8)
     image = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
-    # filename = "image_with_objects.jpeg" # change this 
     cv2.imwrite(f'images_predicted/{filename}', image)
     # this can only be done through iPython
     # display(Image(f'images_predicted/{filename}'))
