@@ -123,5 +123,11 @@ def prediction(model: Model, file: UploadFile = File(...)):
     return StreamingResponse(file_image, media_type="image/jpeg")
 
 if __name__ == '__main__':
-	host = "127.0.0.1"
-	uvicorn.run("deploying_object_classification_model_w_FastAPI:app", host=host, port=8000,reload=True)
+	image_files = [
+	"apple.jpg", "car1.jpg", "car3.jpg", "clock2.jpg", "clock.jpg", "oranges.jpg",
+	"apples.jpg", "car2.jpg", "car.jpg", "clock3.jpg", "fruits.jpg"]
+	print(images_dir)
+	for image_file in image_files:
+		detect_and_draw_box(image_file)
+	# host = "127.0.0.1"
+	# uvicorn.run("deploying_object_classification_model_w_FastAPI:app", host=host, port=8000,reload=True)
