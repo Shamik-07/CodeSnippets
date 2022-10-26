@@ -14,7 +14,7 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import StreamingResponse
 
 parent_dir = os.path.abspath(os.pardir)
-images_dir = os.path.join(parent_dir, "images/object_classification/example_images")
+images_dir = os.path.join(parent_dir, "images/object_detection/example_images")
 # creating the necessary directories
 dir_names = ["images_with_boxes", "images_uploaded"]
 for each_dir in dir_names:
@@ -122,12 +122,21 @@ def prediction(model: Model, file: UploadFile = File(...)):
     # Return the image as a stream specifying media type
     return StreamingResponse(file_image, media_type="image/jpeg")
 
+# for jupyter
+# # Allows the server to be run in this interactive environment
+# nest_asyncio.apply()
+# # Spin up the server!    
+# uvicorn.run(app, host=host, port=8000)
+
+
 if __name__ == '__main__':
 	image_files = [
 	"apple.jpg", "car1.jpg", "car3.jpg", "clock2.jpg", "clock.jpg", "oranges.jpg",
 	"apples.jpg", "car2.jpg", "car.jpg", "clock3.jpg", "fruits.jpg"]
-	print(images_dir)
 	for image_file in image_files:
 		detect_and_draw_box(image_file)
-	# host = "127.0.0.1"
-	# uvicorn.run("deploying_object_classification_model_w_FastAPI:app", host=host, port=8000,reload=True)
+
+	host = "127.0.0.1"
+	uvicorn.run("deploying_object_classification_model_w_FastAPI:app", host=host, port=8000,reload=True)
+
+
