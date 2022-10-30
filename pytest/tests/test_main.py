@@ -2,6 +2,7 @@
 import pytest
 import datetime
 import sys
+import time
 
 def increment_by_1(x):
     x += 1
@@ -103,3 +104,40 @@ def test_others():
 def test_my_name():
     print("***something bogus***")
     assert 0 == 0
+
+
+# mocking tests with pytest-mock
+def is_windows():
+    time.sleep(2)
+    return True
+
+def get_operating_system():
+    return "Windows" if is_windows() else "Linux"
+
+@pytest.mark.application_tests
+def test_get_operating_system():
+    start_time = time.perf_counter()
+    assert get_operating_system() == "Windows"
+    print(f"total time(s): {time.perf_counter()-start_time}")
+
+@pytest.mark.application_tests
+def test_get_operating_system_mocked(mocker):
+    # Mock the operatng system function and return True always
+    mocker.patch('test_main.is_windows', return_value=True)
+    start_time = time.perf_counter()
+    assert get_operating_system() == 'Windows'
+    print(f"total time(ms): {(time.perf_counter()-start_time)*1e3}")
+
+@pytest.mark.application_tests
+def test_operation_system_is_linux_mocked(mocker):
+    # Mock the operatng system function and return False for testing Linux
+    mocker.patch('test_main.is_windows', return_value=False) 
+    start_time = time.perf_counter()
+    assert get_operating_system() == 'Linux'
+    print(f"total time(ms): {(time.perf_counter()-start_time)*1e3}")
+
+
+
+
+
+
