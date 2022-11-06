@@ -27,7 +27,7 @@ class Wine(BaseModel):
 @app.on_event("startup")
 def load_clf():
     # Load classifier from pickle file
-    with open(f"{os.getcwd()}/wine.pkl", "rb") as file:
+    with open(f"{os.path.abspath(os.path.dirname(__file__))}/wine.pkl", "rb") as file:
         global clf
         clf = pickle.load(file)
 
