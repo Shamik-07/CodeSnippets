@@ -1,3 +1,5 @@
+# Bloomberg GPT
+
 ![bloomberg gpt training](./images/bloomberg_gpt_training.png)
 
 ![bloomberg gpt dataset](./images/bloomberg_gpt_dataset.png)
