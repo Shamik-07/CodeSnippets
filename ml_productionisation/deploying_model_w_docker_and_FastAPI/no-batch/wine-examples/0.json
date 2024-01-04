@@ -1,15 +1,3 @@
-{
-    "alcohol": 13.2,
-    "malic_acid": 1.7,
-    "ash": 2.1,
-    "alcalinity_of_ash": 11.2,
-    "magnesium": 100.0,
-    "total_phenols": 2.6,
-    "flavanoids": 2.7,
-    "nonflavanoid_phenols": 0.2,
-    "proanthocyanins": 1.2,
-    "color_intensity": 4.3,
-    "hue": 1.0,
-    "od280_od315_of_diluted_wines": 3.4,
-    "proline": 1050.0
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:63f34509e12ab77edd7901c9857f3503c0f8e4fc86b2bdc5195ffde2f2171c2a
+size 335
