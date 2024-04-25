@@ -1,0 +1,7 @@
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+  - pytorch
+  - nvidia
+auto_activate_base: false
