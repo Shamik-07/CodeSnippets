@@ -190,3 +190,4 @@ print("Answer:\n\n")
 print(response.choices[0].message.content)
 # to close the DB connection
 # cur.close()
+# conn.close()
