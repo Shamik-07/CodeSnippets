@@ -1,3 +1,6 @@
 [submodule "nn-zero-to-hero"]
 	path = nn-zero-to-hero
 	url = personal-github:Shamik-07/nn-zero-to-hero.git
+[submodule "rag/graphrag"]
+	path = rag/graphrag
+	url = https://github.com/ms-johnalex/intro-to-graphrag.git
