@@ -54,12 +54,25 @@ fn main() {
 	{module/script name}::{function name}();
 }
 ```
-This will execute the script from within the `main.rs` and by executing:
+Then: 
 ```sh
 cargo build
 cargo run
 ```
-Identify
+This will execute the script from within the `main.rs`.
+
+There are other ways to do this as well for instance:
+- Create a bin dir
+```sh
+mkdir src/bin
+mv {some script.rs} {another script.rs} src/bin
+```
+Execute:
+```sh
+cargo run --bin  {some script.rs}
+cargo run --bin  {another script.rs}
+```
+
 
 
 
