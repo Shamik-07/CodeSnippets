@@ -42,6 +42,17 @@ cargo build
 This will compile and execute the rust script i.e. `main.rs`. 
 
 **IF ONE HAS MANY SCRIPTS** in the project then:
+Declare the module in `main.rs` by 
+```rust
+mod {module/script name};
+```
+Call the entire module in the main function of `main.rs`:
+```rust
+fn main() {
+	{module/script name}::{function name}();
+}
+```
+This will execute the script from within the `main.rs` and by executing `cargo build`, on
 ```sh
 cargo build
 ```
