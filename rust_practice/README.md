@@ -79,14 +79,9 @@ cargo run --bin  {another script.rs}
 # What's cargo ???
 Cargo is the Rust package manager and build system. It simplifies the process of managing Rust projects by handling tasks like building code, downloading dependencies, and running tests. Here’s a quick overview of what Cargo can do:
 
-Create New Projects: Initialize new Rust projects with cargo new.
-
-Build Projects: Compile your code with cargo build.
-
-Run Projects: Build and run your code with cargo run.
-
-Manage Dependencies: Add and update dependencies in your Cargo.toml file.
-
-Run Tests: Execute tests with cargo test.
-
-Documentation: Generate documentation for your project with cargo doc.
+- Create New Projects: Initialize new Rust projects with `cargo new`.
+- Build Projects: Compile your code with `cargo build`.
+- Run Projects: Build and run your code with `cargo run`.
+- Manage Dependencies: Add and update dependencies in your `Cargo.toml` file.
+- Run Tests: Execute tests with `cargo test`.
+- Documentation: Generate documentation for your project with `cargo doc`.
