@@ -34,13 +34,15 @@ This will create a new project with all the necessary files, one of them being `
 
 #### Execute script with cargo
 Navigate to the cargo project dir.
-
+##### One script in the project dir
 **IF ONE HAS A SINGLE RUST SCRIPT** in the project then it's as easy as:
 ```sh
 cargo build
+cargo run
 ```
 This will compile and execute the rust script i.e. `main.rs`. 
 
+##### Many scripts in the project dir
 **IF ONE HAS MANY SCRIPTS** in the project then:
 Declare the module in `main.rs` by 
 ```rust
@@ -52,9 +54,10 @@ fn main() {
 	{module/script name}::{function name}();
 }
 ```
-This will execute the script from within the `main.rs` and by executing `cargo build`, on
+This will execute the script from within the `main.rs` and by executing:
 ```sh
 cargo build
+cargo run
 ```
 Identify
 
