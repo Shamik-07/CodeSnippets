@@ -1,13 +1,18 @@
-import pytest
+import pickle
 from argparse import Namespace
 from collections.abc import Generator
+from pathlib import Path
+
+import pytest
+
 
 @pytest.fixture(scope="session")
 def input_value():
-   input = 39
-   yield input
-   print("***executing after yield statement as a tear down***")
-   del input
+    input = 39
+    yield input
+    print("***executing after yield statement as a tear down***")
+    del input
+
 
 @pytest.fixture(scope="session")
 def generated_yyyy_mm_dd():
@@ -15,6 +20,7 @@ def generated_yyyy_mm_dd():
     yield yyyy, mm, dd
     print("***executing after yield statement as a tear down***")
     del yyyy, mm, dd
+
 
 # The below fixture is required when a function needs argparse arguments
 # this will automatically give these files by writing the content passed
