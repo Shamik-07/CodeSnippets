@@ -84,4 +84,4 @@ def test_read_pickle_data(setup_files: Namespace) -> None:
     read_pickle_data(args=args)
 	assert (
         Path(args.some_random_filepath).exists() or Path(args.another_random_filepath).exists()
-    )	
+    )
