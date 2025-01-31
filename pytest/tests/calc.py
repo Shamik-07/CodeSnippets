@@ -13,7 +13,7 @@ def calc(a, b, op):
         return a / b
     raise ValueError("Invalid operator")
 
-def read_data(args: Namespace) -> None:
+def read_pickle_data(args: Namespace) -> None:
 	with open(file=args.some_random_filepath, mode="rb") as f:
         obj = pickle.load(f)
 	with open(file=args.another_random_filepath, mode="rb") as f:
