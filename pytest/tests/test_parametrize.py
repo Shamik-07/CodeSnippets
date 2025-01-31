@@ -1,7 +1,8 @@
 import pytest
 from dataclasses import dataclass
 from calc import calc
-
+from argparse import Namespace
+from pathlib import Path
 
 @dataclass
 class CalcCase:
@@ -55,3 +56,32 @@ CalcCase("sub", a=2, b=1, op="-", result=1),
 ], ids=lambda tc: tc.name)
 def test_calc(tc):
     assert calc(tc.a, tc.b, tc.op) == tc.result
+
+# The indirect=true passes the data to the setup_files function
+# instead of the test_read_pickle_data function directly
+@pytest.mark.parametrize(
+    "setup_map_entities_files",
+    [
+        {
+            "some_random_filepath": {
+                "google": "Google",
+                "apple": "Apple",
+                "samsung": "Samsung",
+            },
+            "another_random_filepath": {
+                "google": ["google"],
+                "apple": ["apple inc.", "apple"],
+                "microsoft": ["microsoft"],
+                "samsung": ["samsung"],
+            },
+        },
+    ],
+    indirect=True,
+)
+def test_read_pickle_data(setup_files: Namespace) -> None:
+	args = setup_map_entities_files
+
+    read_pickle_data(args=args)
+	assert (
+        Path(args.some_random_filepath).exists() or Path(args.another_random_filepath).exists()
+    )	
