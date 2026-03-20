@@ -1,0 +1,43 @@
+# Dependabot configuration
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "00:00"
+      timezone: "America/Los_Angeles"
+    open-pull-requests-limit: 20
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    labels:
+      - "dependencies"
+    assignees:
+      - Shamik-07
+    groups:
+      actions-deps:
+        patterns:
+          - "*"
+
+# for project security updates
+  - package-ecosystem: "uv"
+    directories:
+      - "/"
+    # - some other directory
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "00:00"
+      timezone: "America/Los_Angeles"
+    open-pull-requests-limit: 0
+    commit-message:
+      prefix: "fix"
+      include: "scope"
+    labels:
+      - "security"
+      - "dependencies"
+    assignees:
+      - Shamik-07
