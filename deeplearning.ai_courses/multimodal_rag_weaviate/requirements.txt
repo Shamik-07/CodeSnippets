@@ -23,7 +23,7 @@ scikit-image ## needed for umap-learn
 colorcet ## needed for umap-learn
 datashader ## needed for umap-learn
 opencv-python
-python-dotenv==1.0.0
+python-dotenv==1.2.2
 google-generativeai
-python-dotenv==1.0.0
+python-dotenv==1.2.2
 dask-expr
